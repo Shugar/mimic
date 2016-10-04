@@ -6,7 +6,6 @@
     height: 600px;
   }
 
-
   .contact {
     background: #efc94c;
     padding: 80px 0;
@@ -44,7 +43,7 @@
 
     .text {
       font-family: 'Gotham Book', sans-serif;
-      max-width: 60%;
+      max-width: 70%;
       line-height: 22px;
       margin-top: 10px;
 
@@ -96,6 +95,61 @@
           color: #efc94c;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1020px) {
+  .contact-wrapper {
+    .contact .text {
+      max-width: 90%;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    .contact .text {
+      max-width: 90%;
+      font-size: 14px;
+    }
+
+    .head {
+      background: url("../images/contact.png") no-repeat center right / cover;
+      height: 400px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-wrapper {
+
+    .contact {
+
+      &-item {
+        flex: initial;
+        width: 100%;
+      }
+
+      .container {
+        flex-flow: column nowrap;
+      }
+
+      .text {
+        font-size: 15px;
+        max-width: 100%;
+      }
+
+      .form {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    .head {
+      background: url("../images/contact.png") no-repeat center right / cover;
+      height: 300px;
     }
   }
 }

@@ -7,13 +7,19 @@ const pages = [
 ]
 
 const stateNames = {
-        '-1': 'unstarted',
-        0: 'ended',
-        1: 'playing',
-        2: 'paused',
-        3: 'buffering',
-        5: 'video cued'
-    };
+    '-1': 'unstarted',
+    0: 'ended',
+    1: 'playing',
+    2: 'paused',
+    3: 'buffering',
+    5: 'video cued'
+};
+
+function toggleMenu() {
+  $('.nav-toggle').click(() => {
+    $('.nav').toggleClass('--active');
+  })
+}
 
 function videoBackground() {
   let video = $('.main-page .head').data('vide').getVideoObject();
@@ -72,7 +78,10 @@ function launchStellar() {
 const onReady = () => {
   launchStellar();
   checkPage(pages);
-  videoBackground();
+  toggleMenu();
+
+  if ($('body').hasClass('main-page'))
+    videoBackground();
 }
 
 $(document).ready(onReady);

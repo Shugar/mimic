@@ -15,12 +15,13 @@
     top: 55%;
     left: 50%;
     transform: translate(-50%,-50%);
+
+    z-index: 0;
   }
 
   .nav-active {
     border-color: #334c5b;
   }
-
 
   .lets-talk {
     background: #334c5b;

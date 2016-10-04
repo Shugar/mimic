@@ -84,3 +84,46 @@
   }
 
 }
+
+
+@media (max-width: 768px) {
+  .gallery-wrapper {
+    .gallery-item {
+      flex: 0 0 49%;
+    }
+
+    .pagination {
+
+      .container {
+        align-items: center;
+      }
+
+      &-item {
+        margin: 0 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .gallery-wrapper {
+    .filters {
+      font-size: 14px;
+    }
+
+    .filter-characters,
+    .filter-stages,
+    .filter-action {
+      margin: 0 12px;
+    }
+
+    .filter-characters {
+      margin-left: 0;
+    }
+
+    .gallery-item {
+      flex: 0 0 100%;
+      margin-top: 10%;
+    }
+  }
+}
