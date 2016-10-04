@@ -1,0 +1,137 @@
+.footer {
+  color: #fff;
+  background: #191b31;
+
+  .container {
+    align-items: flex-start;
+  }
+
+  &-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    padding: 65px 0 110px;
+  }
+
+  .logo img {
+    width: 90%;
+  }
+
+  &-item {
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 24px;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+
+      font-family: 'Gotham Book', sans-serif;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+
+  .footer-gallery-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    .footer-gallery-item {
+      height: 55px;
+      width: 55px;
+      margin-right: 10px;
+      background: #8d92c9;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .footer-gallery-dots {
+      width: 55px;
+      height: 55px;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+
+      .dot {
+        width: 7px;
+        height: 7px;
+        background: #fff;
+        border-radius: 100px;
+        margin-right: 4px;
+
+        &:last-child { margin-right: 0 };
+      }
+    }
+  }
+
+  .socials {
+    margin-top: 10px;
+
+    &-item {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding-right: 20%;
+      margin-top: 15px;
+
+      font-size: 16px;
+      line-height: 25px;
+
+      &:first-child { margin-top: 0; }
+    }
+
+    .icon {
+      flex: 0 0 34px;
+      height: 34px;
+      margin-right: 20px;
+    }
+
+    .phone .icon {
+      background: url('../images/phone.png') no-repeat center center / contain;
+    }
+
+    .mail .icon {
+      background: url('../images/mail.png') no-repeat center center / contain;
+    }
+
+    .location .icon {
+      background: url('../images/location.png') no-repeat center center / contain;
+    }
+  }
+
+  .footer-logo {
+    flex: 0 0 15%;
+  }
+
+  .footer-about {
+    flex: 0 0 27%;
+  }
+
+  .footer-gallery {
+    flex: 0 0 20%;
+  }
+
+  .footer-info {
+    flex: 0 0 25%;
+  }
+
+
+  &-copy {
+    width: 100%;
+    padding: 30px 0;
+    border-top: 1px solid rgb(38,39,50);
+
+    font-family: 'Gotham Book', sans-serif;
+    font-size: 13px;
+    line-height: 25px;
+  }
+}

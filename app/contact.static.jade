@@ -1,0 +1,55 @@
+doctype html
+head
+  meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+  title MIMIC
+  meta(name="viewport" content="width=device-width")
+  meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+  link(rel="stylesheet" href="stylesheets/app.css")
+  link(rel="icon" href="images/favicon.png")
+  link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css")
+
+
+  script(src="javascripts/vendor.js")
+  script(src="javascripts/app.js")
+
+
+  script.
+    require('scripts/initialize');
+
+body.contact-wrapper
+  .head
+    .container
+      include views/header
+
+  .contact
+    .container
+      .contact-item
+        .title
+          | Lets talk
+        .text
+          | Ready to bring your brand to life?
+
+        .text
+          | Get in touch for a detailed quote or share your questions in the contact form to the right
+
+        .subtitle
+          | MIMIC
+
+        .text
+          | +971 XX XXXXXX
+          br
+          | sales@mimic.com
+          br
+          | JLT, Dubai. UAE
+          br
+          | Office 1234
+
+      .contact-item
+        form.form
+          input.input(type="text" placeholder="Subject (Optional but helpful)")
+          input.input(type="text" placeholder="Email address")
+          textarea.textarea(placeholder="Message")
+          button.submit(type="submit")
+            | Send
+
+  include views/footer

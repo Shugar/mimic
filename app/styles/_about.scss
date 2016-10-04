@@ -1,0 +1,151 @@
+.about-wrapper {
+  background: #efc94c;
+  color: #334c5b;
+
+  .head {
+    height: 100vh;
+    position: relative;
+  }
+
+  .howitworks {
+    background: url('../images/about.png') no-repeat center center / contain;
+    width: 100%;
+    height: 550px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .nav-active {
+    border-color: #334c5b;
+  }
+
+
+  .lets-talk {
+    background: #334c5b;
+    color: #fff;
+    padding: 100px 0 120px;
+
+    .title {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    .text {
+      font-size: 20px;
+      line-height: 30px;
+      margin-top: 25px;
+      width: 50%;
+      text-align: center;
+    }
+
+    .button {
+      background: #45b29d;
+      font-weight: bold;
+      line-height: 60px;
+      padding: 0 65px;
+      border-radius: 100px;
+      margin-top: 40px;
+      cursor: pointer;
+    }
+  }
+
+
+  .points {
+    width: 100%;
+    padding-bottom: 150px;
+
+    .title {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    &-list {
+      width: 80%;
+      margin-top: 100px;
+    }
+
+    .point {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      &-picture {
+        flex: 0 0 50%;
+        background: #df5a49;
+        height: 35vw;
+        position: relative;
+        min-height: 350px;
+      }
+
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &-info {
+        flex: 0 0 50%;
+        padding: 0 7%;
+      }
+
+      &-title {
+        margin-top: 35px;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      &-description {
+        margin-top: 15px;
+        font-size: 18px;
+        line-height: 30px;
+      }
+
+      &-number {
+        display: inline-block;
+        border: 1px rgb(199, 166, 69) solid;
+        padding: 32px 40px 10px 18px;
+        font-size: 42px;
+        font-weight: bold;
+        line-height: 42px;
+      }
+
+      &-numberInner {
+        position: relative;
+      }
+
+      &-numberInner:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: -11px;
+        left: 0;
+        border-bottom: 1px #334c5b solid;
+      }
+    }
+  }
+
+  .point-1 .bg {
+    background: url('../images/picture-1.png') no-repeat left bottom / 80%;
+  }
+
+  .point-2 .bg {
+    background: url('../images/picture-2.png') no-repeat right bottom / 70%;
+  }
+
+  .point-3 .bg {
+    background: url('../images/picture-3.png') no-repeat left bottom / 70%;
+  }
+
+  .point-4 .bg {
+    background: url('../images/picture-4.png') no-repeat right bottom / 72%;
+  }
+
+  .point-5 .bg {
+    background: url('../images/picture-5.png') no-repeat left bottom / 80%;
+  }
+
+}

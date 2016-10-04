@@ -1,0 +1,102 @@
+doctype html
+head
+  meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+  title MIMIC
+  meta(name="viewport" content="width=device-width")
+  meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+  link(rel="stylesheet" href="stylesheets/app.css")
+  link(rel="icon" href="images/favicon.png")
+  link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css")
+
+
+  script(src="javascripts/vendor.js")
+  script(src="javascripts/app.js")
+
+
+  script.
+    require('scripts/initialize');
+
+body.about-wrapper
+  .head
+    .container
+      include views/header
+
+      .howitworks
+
+  .points
+    .container
+      .title
+        | How it works
+
+      .points-list
+        .point.point-1
+          .point-picture
+            .bg
+          .point-info
+            .point-number
+              .point-numberInner
+                | 1
+            .point-title
+              | Attract
+            .point-description
+              | Consumers will be attracted to the big animated screen at your stand.
+
+        .point.point-2
+          .point-info
+            .point-number
+              .point-numberInner
+                | 2
+            .point-title
+              | Interact
+            .point-description
+              | They’ll enter their info & start creating their own MIMIC video.
+          .point-picture
+            .bg
+
+        .point.point-3
+          .point-picture
+            .bg
+          .point-info
+            .point-number
+              .point-numberInner
+                | 3
+            .point-title
+              | Enjoy
+            .point-description
+              | A customised character will seamlessly follow their every move in a 3D scene.
+
+        .point.point-4
+          .point-info
+            .point-number
+              .point-numberInner
+                | 4
+            .point-title
+              | Share
+            .point-description
+              | The completed 30-sec video will be emailed to the user instantly.
+          .point-picture
+            .bg
+
+        .point.point-5
+          .point-picture
+            .bg
+          .point-info
+            .point-number
+              .point-numberInner
+                | 5
+            .point-title
+              | Learn
+            .point-description
+              | Receive a valuable database with every consumer’s info.
+
+
+  .lets-talk
+    .container
+      .title
+        | Let's talk
+      .text
+        | Get in touch for a detailed quote or share your questions and we will gte back to you at the soonest
+      .button
+        | Get in touch
+
+  include views/footer

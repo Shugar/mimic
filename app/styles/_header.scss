@@ -1,0 +1,41 @@
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 60px 0 0 0;
+
+  width: 100%;
+
+  &-list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-item {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 50px;
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 3px transparent solid;
+    color: inherit;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &-active {
+    border-bottom: 3px #fff solid;
+  }
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 40px;
+  color: inherit;
+}

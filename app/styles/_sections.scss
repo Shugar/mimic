@@ -1,0 +1,91 @@
+.main-page .section {
+  height: 100vh;
+  position: relative;
+
+  &-container {
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+    height: 100%;
+  }
+
+  .pose {
+    position: absolute;
+  }
+
+  .bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &.pose-1 {
+    background: #e27a3f;
+
+    .bg {
+      background: url('../images/bg-1.png') no-repeat center center;
+      width: 100%;
+      height: 600px;
+    }
+
+    .pose {
+      background: url('../images/pose-1.png') 50% 50% no-repeat fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 25;
+    }
+  }
+
+  &.pose-2 {
+    background: #efc94c;
+
+    .bg {
+      background: url('../images/bg-2.png') no-repeat center center;
+      width: 100%;
+      height: 600px;
+    }
+
+    .pose {
+      background: url('../images/pose-2.png') 50% 50% no-repeat fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 25;
+    }
+  }
+
+  &.pose-3 {
+    background: #45b29d;
+
+    .bg {
+      background: url('../images/bg-3.png') no-repeat center center;
+      width: 100%;
+      height: 600px;
+    }
+
+    .pose {
+      background: url('../images/pose-3.png') 50% 50% no-repeat fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 25;
+    }
+  }
+
+  &.pose-4 {
+    background: #334c5b;
+
+    .bg {
+      background: url('../images/bg-4.png') no-repeat center center;
+      width: 100%;
+      height: 600px;
+    }
+
+    .pose {
+      background: url('../images/pose-4.png') 50% 50% no-repeat fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 25;
+    }
+  }
+
+}

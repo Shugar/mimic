@@ -1,0 +1,101 @@
+.contact-wrapper {
+  color: #fff;
+
+  .head {
+    background: url('../images/contact.png') no-repeat center center / cover;
+    height: 600px;
+  }
+
+
+  .contact {
+    background: #efc94c;
+    padding: 80px 0;
+
+    .container {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &-item {
+      display: flex;
+      flex-flow: column nowrap;
+      flex: 0 0 55%;
+      color: #191b31;
+
+      &:first-child {
+        flex: 0 0 45%;
+      }
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 56px;
+    }
+
+    .subtitle {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 25px;
+      margin-top: 25px;
+    }
+
+    .text {
+      font-family: 'Gotham Book', sans-serif;
+      max-width: 60%;
+      line-height: 22px;
+      margin-top: 10px;
+
+      &:first-child { margin-top: 0; }
+    }
+
+    .form {
+      margin-top: 46px;
+
+      display: flex;
+      flex-flow: column nowrap;
+
+      font-family: "Source Sans Pro", sans-serif;
+
+      .input,
+      .textarea {
+        margin-top: 20px;
+        width: 100%;
+        line-height: 50px;
+        padding: 0 15px;
+        border: 1px #eee solid;
+        border-radius: 4px;
+        color: #acafb1;
+        outline: none;
+      }
+
+      .textarea {
+        height: 170px;
+      }
+
+      .submit {
+        margin-top: 20px;
+        width: 100px;
+        align-self: flex-end;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        background: none;
+        font-size: 12px;
+        line-height: 38px;
+        border: 2px #191b31 solid;
+        text-transform: uppercase;
+        border-radius: 4px;
+        transition: background .1s ease, color .1s ease;
+        will-change: background, color;
+
+        &:hover {
+          background: #191b31;
+          color: #efc94c;
+        }
+      }
+    }
+  }
+}

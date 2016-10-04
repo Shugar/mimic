@@ -1,0 +1,50 @@
+doctype html
+head
+  meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+  title MIMIC
+  meta(name="viewport" content="width=device-width")
+  meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+  link(rel="stylesheet" href="stylesheets/app.css")
+  link(rel="icon" href="images/favicon.png")
+  link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css")
+
+
+  script(src="javascripts/vendor.js")
+  script(src="javascripts/app.js")
+
+  script.
+    require('scripts/initialize');
+
+
+body.main-page
+  .head(data-vide-bg="mp4: http://vjs.zencdn.net/v/oceans.mp4, poster: images/video.png" data-vide-options="autoplay: false")
+    .container
+      include views/header
+
+      .title
+        | Bring your brand to life with every move
+        .play.play-active
+
+      .mouse
+
+  .section.pose-1
+    .bg
+    .section-container
+      .pose
+
+  .section.pose-2
+    .bg
+    .section-container
+      .pose
+
+  .section.pose-3
+    .bg
+    .section-container
+      .pose
+
+  .section.pose-4
+    .bg
+    .section-container
+      .pose
+
+  include views/footer
