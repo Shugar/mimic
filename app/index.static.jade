@@ -17,15 +17,16 @@ head
 
 
 body.main-page
-  .head(data-vide-bg="mp4: http://vjs.zencdn.net/v/oceans.mp4, poster: images/video.png" data-vide-options="autoplay: false")
+  .head(data-vide-bg="mp4: http://vjs.zencdn.net/v/oceans.mp4, poster: images/video.png" data-vide-options="autoplay: true")
     .container
       include views/header
-
+      .overlay
       .title
         | Bring your brand to life with every move
         .play.play-active
 
       .mouse
+      #player
 
   .section.pose-1
     .bg(data-stellar-background-ratio="0.5")

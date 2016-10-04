@@ -1,15 +1,50 @@
+var YouTubePlayer = require('youtube-player');
+
 const pages = [
   'contact',
   'about',
   'gallery'
 ]
 
+const stateNames = {
+        '-1': 'unstarted',
+        0: 'ended',
+        1: 'playing',
+        2: 'paused',
+        3: 'buffering',
+        5: 'video cued'
+    };
+
 function videoBackground() {
   let video = $('.main-page .head').data('vide').getVideoObject();
+  window.video = video;
+  var player = YouTubePlayer('player', {
+        videoId: 'GeoUELDgyM4'
+    });
 
+  player.on('stateChange', function (event) {
+      if (!stateNames[event.data]) {
+          throw new Error('Unknown state (' + event.data + ').');
+      }
+      console.log(event);
+      if (event.data==0 || event.data==2) {
+        $('.title, .mouse').fadeIn();
+        $('#player').fadeOut();
+        $('.main-page .play').addClass('play-active');
+        video.play()
+      }
+      if (event.data==1) {
+        $('.title, .mouse').fadeOut();
+        $('#player').fadeIn();
+        $('.main-page .play').removeClass('play-active');
+        video.pause();
+      }
+  });
   $('.main-page .play').click(() => {
-    video.paused ? video.play() : video.pause();
-    $('.main-page .play').removeClass('play-active');
+
+    player.playVideo();
+    video.pause();
+    $('.main-page .play').toggleClass('play-active');
   });
 }
 
