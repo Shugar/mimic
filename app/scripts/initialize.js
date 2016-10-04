@@ -4,7 +4,7 @@ const pages = [
   'gallery'
 ]
 
-const videoBackground = () => {
+function videoBackground() {
   let video = $('.main-page .head').data('vide').getVideoObject();
 
   $('.main-page .play').click(() => {
@@ -13,14 +13,29 @@ const videoBackground = () => {
   });
 }
 
-const checkPage = (array) => {
+function checkPage(array) {
   for (var i in array) {
     if ($('body').hasClass(array[i] + '-wrapper'))
       $('.nav-' + array[i]).addClass('nav-active');
   }
 }
 
+function launchStellar() {
+  var offset = $(window).height()/4
+
+  $('.section').each((i,e) => {
+    $(e).find('.bg').attr('data-stellar-vertical-offset', offset*(i+1))
+  })
+
+  $.stellar({
+    horizontalScrolling: false,
+    // scrollProperty: 'transform',
+    // positionProperty: 'transform'
+  })
+}
+
 const onReady = () => {
+  launchStellar();
   checkPage(pages);
   videoBackground();
 }
