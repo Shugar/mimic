@@ -94,7 +94,7 @@ const onReady = () => {
   checkPage(pages);
   toggleMenu();
 
-  if ($(window).width() < 768)
+  if ($(window).width() > 768)
     launchStellar();
 
   if ($('body').hasClass('main-page'))
