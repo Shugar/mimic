@@ -63,18 +63,12 @@
       background: #efc94c;
     }
 
-    .nav.--active .nav-toggle {
+    .nav.nav-showed .nav-toggle {
       background: url('../images/cross.svg') no-repeat center center / contain;
-      height: 17px;
     }
 
     .nav-toggle {
       background: url('../images/burger.svg') no-repeat center center / contain;
-      width: 22px;
-      height: 15px;
-      margin-top: 3px;
-      cursor: pointer;
-      z-index: 95;
     }
   }
 
@@ -89,31 +83,33 @@
       background: #45b29d;
     }
 
-    .nav.--active .nav-toggle {
+    .nav.nav-showed .nav-toggle {
       background: url('../images/cross.svg') no-repeat center center / contain;
-      height: 17px;
     }
 
     .nav-toggle {
       background: url('../images/burger.svg') no-repeat center center / contain;
-      width: 22px;
-      height: 15px;
-      margin-top: 3px;
-      cursor: pointer;
-      z-index: 95;
     }
   }
 
   .logo {
     font-size: 30px;
     z-index: 50;
+    margin-top: 50px;
   }
 
   .nav {
     align-items: flex-start;
     z-index: 50;
+    padding: 0 30px;
 
-    &.--active {
+    position: fixed;
+    top: 0px;
+    left: 0;
+
+    &.nav-showed {
+      height: 100%;
+
       .nav-list {
         display: flex;
       }
@@ -128,7 +124,7 @@
       background: url('../images/burger-white.svg') no-repeat center center / contain;
       width: 22px;
       height: 15px;
-      margin-top: 3px;
+      margin-top: 53px;
       cursor: pointer;
       z-index: 95;
     }

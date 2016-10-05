@@ -16,9 +16,24 @@ const stateNames = {
 };
 
 function toggleMenu() {
-  $('.nav-toggle').click(() => {
-    $('.nav').toggleClass('--active');
-  })
+  $('.nav-toggle').on('click', function(event) {
+    event.preventDefault();
+    $('.nav').toggleClass('nav-showed');
+    $('body').toggleClass('body-fixed');
+  });
+}
+
+function toggleInfo() {
+  $('.plus').on('click', function(event) {
+    event.preventDefault();
+
+    if ($(this).hasClass('plus-active')) {
+      $(this).removeClass('plus-active');
+    } else {
+      $('.plus').removeClass('plus-active');
+      $(this).addClass('plus-active');
+    }
+  });
 }
 
 function videoBackground() {
@@ -76,12 +91,17 @@ function launchStellar() {
 }
 
 const onReady = () => {
-  launchStellar();
   checkPage(pages);
   toggleMenu();
 
+  if ($(window).width() < 768)
+    launchStellar();
+
   if ($('body').hasClass('main-page'))
     videoBackground();
+
+  if ($('body').hasClass('about-wrapper'))
+    toggleInfo();
 }
 
 $(document).ready(onReady);

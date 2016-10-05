@@ -68,6 +68,7 @@
         border-radius: 4px;
         color: #acafb1;
         outline: none;
+        -webkit-appearance: none;
       }
 
       .textarea {
@@ -133,7 +134,7 @@
       }
 
       .container {
-        flex-flow: column nowrap;
+        display: block;
       }
 
       .text {

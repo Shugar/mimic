@@ -1,11 +1,13 @@
 .main-page .section {
   height: 100vh;
   position: relative;
+  overflow: hidden;
 
   &-container {
     margin: 0 auto;
     position: relative;
-    width: 960px;
+    max-width: 960px;
+    width: 100%;
     height: 100%;
   }
 
@@ -84,4 +86,33 @@
     }
   }
 
+}
+
+
+@media (max-width: 768px) {
+  .main-page .section {
+    .bg {
+      display: none;
+    }
+
+    &.pose-1 .pose {
+      background: url('../images/bg-1-mobile.png') no-repeat center center;
+      background-size: 150%;
+    }
+
+    &.pose-2 .pose {
+      background: url('../images/bg-2-mobile.png') no-repeat center center;
+      background-size: 130%;
+    }
+
+    &.pose-3 .pose {
+      background: url('../images/bg-3-mobile.png') no-repeat center center;
+      background-size: 155%;
+    }
+
+    &.pose-4 .pose {
+      background: url('../images/bg-4-mobile.png') no-repeat center center;
+      background-size: 120%;
+    }
+  }
 }
