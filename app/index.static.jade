@@ -6,7 +6,6 @@ head
   meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
   link(rel="stylesheet" href="stylesheets/app.css")
   link(rel="icon" href="images/favicon.png")
-  link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css")
 
 
   script(src="javascripts/vendor.js")
@@ -15,11 +14,39 @@ head
   script.
     require('scripts/initialize');
 
+    var startedValue;
+    (function progressBar() {
+      startedValue = 0;
+      var randomNumber;
+      setInterval(function() {
+        if (startedValue < 90) {
+          randomNumber = ~~(Math.random()*10+5);
+          startedValue += randomNumber;
+          $('.percents').empty().append(startedValue);
+          $('.percents').css('transform', 'translateX(' + startedValue + '%)')
+          $('.progress-line').css('transform', 'translateX(' + (-100 + startedValue) + '%)')
+        }
+      }, 300)
+    })()
+
+    $(window).load(function() {
+      startedValue = 100;
+      $('.percents').css('transform', 'translateX(' + startedValue+ '%)')
+      $('.percents').empty().append(startedValue);
+      $('.progress-line')
+        .css('transform', 'translateX(' + (-100 + startedValue) + '%)')
+        .queue(function() {
+          $('.preloader').delay(300).fadeOut(400);
+        });
+    });
+
+
 
 body.main-page
+  include components/preloader
   .head(data-vide-bg="mp4: http://vjs.zencdn.net/v/oceans.mp4, poster: images/video.png" data-vide-options="autoplay: true")
     .container
-      include views/header
+      include components/header
       .empty
       .overlay
       .title
@@ -49,4 +76,4 @@ body.main-page
     .section-container
       .pose
 
-  include views/footer
+  include components/footer

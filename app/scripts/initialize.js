@@ -15,6 +15,7 @@ const stateNames = {
     5: 'video cued'
 };
 
+
 function toggleMenu() {
   $('.nav-toggle').on('click', function(event) {
     event.preventDefault();
