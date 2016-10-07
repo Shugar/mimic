@@ -6,7 +6,8 @@
     "jquery": "2.1.4",
     "jquery.stellar": "stellar#^0.6.2",
     "lightbox2": "^2.8.2",
-    "fotorama": "^4.6.4"
+    "fotorama": "^4.6.4",
+    "vide": "^0.5.0"
   },
   "overrides": {}
 }
