@@ -1,12 +1,11 @@
 doctype html
 head
   meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
-  title MIMIC
+  title MIMIC — Gallery
   meta(name="viewport" content="width=device-width")
   meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
   link(rel="stylesheet" href="stylesheets/app.css")
   link(rel="icon" href="images/favicon.png")
-  link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css")
 
 
   script(src="javascripts/vendor.js")
@@ -16,7 +15,34 @@ head
   script.
     require('scripts/initialize');
 
+    var startedValue;
+    (function progressBar() {
+      startedValue = 0;
+      var randomNumber;
+      setInterval(function() {
+        if (startedValue < 90) {
+          randomNumber = ~~(Math.random()*10+5);
+          startedValue += randomNumber;
+          $('.percents').empty().append(startedValue);
+          $('.percents').css('transform', 'translateX(' + startedValue + '%)')
+          $('.progress-line').css('transform', 'translateX(' + (-100 + startedValue) + '%)')
+        }
+      }, 300)
+    })()
+
+    $(window).load(function() {
+      startedValue = 100;
+      $('.percents').css('transform', 'translateX(' + startedValue+ '%)')
+      $('.percents').empty().append(startedValue);
+      $('.progress-line')
+        .css('transform', 'translateX(' + (-100 + startedValue) + '%)')
+        .queue(function() {
+          $('.preloader').delay(300).fadeOut(400);
+        });
+    });
+
 body.gallery-wrapper
+  include components/preloader
   .head
     .container
       include components/header
@@ -41,21 +67,40 @@ body.gallery-wrapper
   .gallery
     .container
       .gallery-list
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
-        .gallery-item
+        a(href="./images/gallery/photo-1.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-2.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-3.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-4.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-5.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-6.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-7.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-8.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-9.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-10.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-11.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-12.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-13.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-14.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-15.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-16.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
+        a(href="./images/gallery/photo-17.jpg" class="gallery-item" data-lightbox="roadtrip")
+          | Image #2
 
   .pagination
     .container

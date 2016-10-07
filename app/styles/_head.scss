@@ -74,12 +74,36 @@
   }
 
   .mouse {
-    background: url('../images/mouse.png') no-repeat center center / contain;
-    height: 34px;
-    width: 20px;
+    border: 3px #fff solid;
+    border-radius: 100px;
+    height: 42px;
+    width: 26px;
     margin-bottom: 70px;
     position: relative;
     z-index: 2;
+  }
+
+  @keyframes mouse {
+    0% {
+      transform: translate(-50%, 4px);
+    }
+
+    100% {
+      transform: translate(-50%, 0px);
+    }
+  }
+
+  .mouse-dot {
+    height: 5px;
+    width: 5px;
+    border-radius: 10px;
+    background: #fff;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    animation: mouse 1s linear 2s infinite alternate;
   }
 }
 

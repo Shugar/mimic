@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>MIMIC</title>
+  <title>MIMIC — About</title>
   <meta name="viewport" content="width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="stylesheets/app.css">
@@ -11,10 +11,44 @@
   <script src="javascripts/app.js"></script>
   <script>
     require('scripts/initialize');
+    var startedValue;
+    (function progressBar() {
+      startedValue = 0;
+      var randomNumber;
+      setInterval(function() {
+        if (startedValue < 90) {
+          randomNumber = ~~(Math.random()*10+5);
+          startedValue += randomNumber;
+          $('.percents').empty().append(startedValue);
+          $('.percents').css('transform', 'translateX(' + startedValue + '%)')
+          $('.progress-line').css('transform', 'translateX(' + (-100 + startedValue) + '%)')
+        }
+      }, 300)
+    })()
+    
+    $(window).load(function() {
+      startedValue = 100;
+      $('.percents').css('transform', 'translateX(' + startedValue+ '%)')
+      $('.percents').empty().append(startedValue);
+      $('.progress-line')
+        .css('transform', 'translateX(' + (-100 + startedValue) + '%)')
+        .queue(function() {
+          $('.preloader').delay(300).fadeOut(400);
+        });
+    });
     
   </script>
 </head>
 <body class="about-wrapper">
+  <div class="preloader">
+    <div class="skeleton"></div>
+    <div class="progress-bar">
+      <div class="progress-lineWrapper">
+        <div class="progress-line"></div>
+      </div>
+      <div class="percents">0</div>
+    </div>
+  </div>
   <div class="head">
     <div class="container">
       <div class="nav"><a href="/" class="logo">MIMIC</a>
@@ -234,13 +268,13 @@
           <div class="title">CONTACT US</div>
           <div class="socials">
             <div class="socials-item phone">
-              <div class="icon"></div>+971 XX XXXXXX
+              <div class="icon"></div>+971 50 254 7104
             </div>
             <div class="socials-item mail">
-              <div class="icon"></div>sales@mimic.com
+              <div class="icon"></div>info@mimicfun.com
             </div>
             <div class="socials-item location">
-              <div class="icon"></div>JLT, Dubai, UAE, Office 1234
+              <div class="icon"></div>DMC BLDG. 8, Dubai, UAE
             </div>
           </div>
         </div>

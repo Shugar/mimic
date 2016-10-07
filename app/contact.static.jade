@@ -1,7 +1,7 @@
 doctype html
 head
   meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
-  title MIMIC
+  title MIMIC — Contact
   meta(name="viewport" content="width=device-width")
   meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
   link(rel="stylesheet" href="stylesheets/app.css")
@@ -15,8 +15,35 @@ head
 
   script.
     require('scripts/initialize');
+    
+    var startedValue;
+    (function progressBar() {
+      startedValue = 0;
+      var randomNumber;
+      setInterval(function() {
+        if (startedValue < 90) {
+          randomNumber = ~~(Math.random()*10+5);
+          startedValue += randomNumber;
+          $('.percents').empty().append(startedValue);
+          $('.percents').css('transform', 'translateX(' + startedValue + '%)')
+          $('.progress-line').css('transform', 'translateX(' + (-100 + startedValue) + '%)')
+        }
+      }, 300)
+    })()
+
+    $(window).load(function() {
+      startedValue = 100;
+      $('.percents').css('transform', 'translateX(' + startedValue+ '%)')
+      $('.percents').empty().append(startedValue);
+      $('.progress-line')
+        .css('transform', 'translateX(' + (-100 + startedValue) + '%)')
+        .queue(function() {
+          $('.preloader').delay(300).fadeOut(400);
+        });
+    });
 
 body.contact-wrapper
+  include components/preloader
   .head
     .container
       include components/header
@@ -36,13 +63,13 @@ body.contact-wrapper
           | MIMIC
 
         .text
-          | +971 XX XXXXXX
+          | +971 50 254 7104
           br
-          | sales@mimic.com
+          | info@mimicfun.com
           br
-          | JLT, Dubai. UAE
+          | DMC BLDG. 8,
           br
-          | Office 1234
+          | Dubai, UAE
 
       .contact-item
         form.form

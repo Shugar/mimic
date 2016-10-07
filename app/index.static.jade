@@ -1,7 +1,7 @@
 doctype html
 head
   meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
-  title MIMIC
+  title MIMIC — Homepage
   meta(name="viewport" content="width=device-width")
   meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
   link(rel="stylesheet" href="stylesheets/app.css")
@@ -44,7 +44,7 @@ head
 
 body.main-page
   include components/preloader
-  .head(data-vide-bg="mp4: http://vjs.zencdn.net/v/oceans.mp4, poster: images/video.png" data-vide-options="autoplay: true")
+  .head(data-vide-bg="mp4: http://vjs.zencdn.net/v/oceans.mp4, poster: images/fallback.png" data-vide-options="autoplay: true")
     .container
       include components/header
       .empty
@@ -54,26 +54,35 @@ body.main-page
         .play.play-active
 
       .mouse
+        .mouse-dot
       #player
 
   .section.pose-1
     .bg(data-stellar-background-ratio="0.5")
     .section-container
+      .title(data-stellar-ratio="0.5")
+        | I AM A CARTOON BOY
       .pose
 
   .section.pose-2
     .bg(data-stellar-background-ratio="0.5")
     .section-container
+      .title(data-stellar-ratio="0.5")
+        | I AM A MINI ROBOT
       .pose
 
   .section.pose-3
     .bg(data-stellar-background-ratio="0.5")
     .section-container
+      .title(data-stellar-ratio="0.5")
+        | I AM A SKELETON
       .pose
 
   .section.pose-4
     .bg(data-stellar-background-ratio="0.5")
     .section-container
+      .title(data-stellar-ratio="0.5")
+        | I AM A TRANSFORMER
       .pose
 
   include components/footer

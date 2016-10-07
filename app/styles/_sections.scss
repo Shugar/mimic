@@ -3,6 +3,17 @@
   position: relative;
   overflow: hidden;
 
+  .title {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 58px;
+    position: absolute;
+    top: -5%;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   &-container {
     margin: 0 auto;
     position: relative;
@@ -39,6 +50,10 @@
       height: 100%;
       z-index: 25;
     }
+
+    .title {
+      color: #956448;
+    }
   }
 
   &.pose-2 {
@@ -53,6 +68,10 @@
       width: 100%;
       height: 100%;
       z-index: 25;
+    }
+
+    .title {
+      color: #aa9651;
     }
   }
 
@@ -69,6 +88,10 @@
       height: 100%;
       z-index: 25;
     }
+
+    .title {
+      color: #307c6e;
+    }
   }
 
   &.pose-4 {
@@ -83,6 +106,10 @@
       width: 100%;
       height: 100%;
       z-index: 25;
+    }
+
+    .title {
+      color: #1e333f;
     }
   }
 

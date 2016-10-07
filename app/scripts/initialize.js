@@ -41,7 +41,7 @@ function videoBackground() {
   let video = $('.main-page .head').data('vide').getVideoObject();
   window.video = video;
   var player = YouTubePlayer('player', {
-        videoId: 'GeoUELDgyM4'
+        videoId: 'SGLd5raLBro'
     });
 
   player.on('stateChange', function (event) {
@@ -81,13 +81,15 @@ function launchStellar() {
   var offset = $(window).height()/4
 
   $('.section').each((i,e) => {
-    $(e).find('.bg').attr('data-stellar-vertical-offset', offset*(i+1))
+    $(e).find('.bg').attr('data-stellar-vertical-offset', offset*(i+1));
+  })
+
+  $('.section').each((i,e) => {
+    $(e).find('.title').attr('data-stellar-vertical-offset', offset*(i+1));
   })
 
   $.stellar({
-    horizontalScrolling: false,
-    // scrollProperty: 'transform',
-    // positionProperty: 'transform'
+    horizontalScrolling: false
   })
 }
 
