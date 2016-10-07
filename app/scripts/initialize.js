@@ -16,6 +16,42 @@ const stateNames = {
 };
 
 
+const sectionNames = {
+  0: '.head',
+  1: '.pose-1',
+  2: '.pose-2',
+  3: '.pose-3',
+  4: '.pose-4'
+}
+
+function dots() {
+  let section;
+  let waypoints = Object.keys(sectionNames).map((i) => {
+    var item = sectionNames[i]
+    section = $(item).waypoint({
+      handler: (direction) => {
+        if (direction == 'down') {
+          changeDot(i)
+        } else {
+          changeDot(i-1)
+        }
+      }
+    });
+  });
+
+  let lastSection = $('.pose-4').waypoint({
+    handler: (direction) => {
+      $('.dots').toggleClass('dots-hidden');
+    }
+  });
+}
+
+function changeDot(i) {
+  var dot = $('.dots-item');
+  $(dot).removeClass('dots-active');
+  var dotActive = $(dot[i]).addClass('dots-active');
+}
+
 function toggleMenu() {
   $('.nav-toggle').on('click', function(event) {
     event.preventDefault();
@@ -102,6 +138,7 @@ const onReady = () => {
 
   if ($('body').hasClass('main-page'))
     videoBackground();
+    dots();
 
   if ($('body').hasClass('about-wrapper'))
     toggleInfo();

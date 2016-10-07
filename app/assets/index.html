@@ -9,7 +9,9 @@
   <script src="javascripts/vendor.js"></script>
   <script src="javascripts/app.js"></script>
   <script>
+    require('scripts/waypoints');
     require('scripts/initialize');
+    
     
     var startedValue;
     (function progressBar() {
@@ -37,8 +39,6 @@
         });
     });
     
-    
-    
   </script>
 </head>
 <body class="main-page">
@@ -51,7 +51,14 @@
       <div class="percents">0</div>
     </div>
   </div>
-  <div data-vide-bg="mp4: http://vjs.zencdn.net/v/oceans.mp4, poster: images/fallback.png" data-vide-options="autoplay: true" class="head">
+  <div class="dots">
+    <div class="dots-item"></div>
+    <div class="dots-item"></div>
+    <div class="dots-item"></div>
+    <div class="dots-item"></div>
+    <div class="dots-item"></div>
+  </div>
+  <div data-vide-bg="mp4: video/video-bg.mov, webm: video/video-bg.webm, poster: images/fallback.png" data-vide-options="autoplay: true" class="head">
     <div class="container">
       <div class="nav"><a href="/" class="logo">MIMIC</a>
         <div class="nav-toggle"></div>
@@ -71,28 +78,28 @@
   <div class="section pose-1">
     <div data-stellar-background-ratio="0.5" class="bg"></div>
     <div class="section-container">
-      <div data-stellar-ratio="0.5" class="title">I AM A CARTOON BOY</div>
+      <div class="title">I AM A CARTOON BOY</div>
       <div class="pose"></div>
     </div>
   </div>
   <div class="section pose-2">
     <div data-stellar-background-ratio="0.5" class="bg"></div>
     <div class="section-container">
-      <div data-stellar-ratio="0.5" class="title">I AM A MINI ROBOT</div>
+      <div class="title">I AM A MINI ROBOT</div>
       <div class="pose"></div>
     </div>
   </div>
-  <div class="section pose-3">
+  <div id="waypoint" class="section pose-3">
     <div data-stellar-background-ratio="0.5" class="bg"></div>
     <div class="section-container">
-      <div data-stellar-ratio="0.5" class="title">I AM A SKELETON</div>
+      <div class="title">I AM A SKELETON</div>
       <div class="pose"></div>
     </div>
   </div>
   <div class="section pose-4">
     <div data-stellar-background-ratio="0.5" class="bg"></div>
     <div class="section-container">
-      <div data-stellar-ratio="0.5" class="title">I AM A TRANSFORMER</div>
+      <div class="title">I AM A TRANSFORMER</div>
       <div class="pose"></div>
     </div>
   </div>

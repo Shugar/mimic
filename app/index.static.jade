@@ -12,7 +12,9 @@ head
   script(src="javascripts/app.js")
 
   script.
+    require('scripts/waypoints');
     require('scripts/initialize');
+
 
     var startedValue;
     (function progressBar() {
@@ -40,11 +42,17 @@ head
         });
     });
 
-
-
 body.main-page
   include components/preloader
-  .head(data-vide-bg="mp4: http://vjs.zencdn.net/v/oceans.mp4, poster: images/fallback.png" data-vide-options="autoplay: true")
+
+  .dots
+    .dots-item
+    .dots-item
+    .dots-item
+    .dots-item
+    .dots-item
+
+  .head(data-vide-bg="mp4: video/video-bg.mov, webm: video/video-bg.webm, poster: images/fallback.png" data-vide-options="autoplay: true")
     .container
       include components/header
       .empty
@@ -60,28 +68,28 @@ body.main-page
   .section.pose-1
     .bg(data-stellar-background-ratio="0.5")
     .section-container
-      .title(data-stellar-ratio="0.5")
+      .title
         | I AM A CARTOON BOY
       .pose
 
   .section.pose-2
     .bg(data-stellar-background-ratio="0.5")
     .section-container
-      .title(data-stellar-ratio="0.5")
+      .title
         | I AM A MINI ROBOT
       .pose
 
-  .section.pose-3
+  .section.pose-3#waypoint
     .bg(data-stellar-background-ratio="0.5")
     .section-container
-      .title(data-stellar-ratio="0.5")
+      .title
         | I AM A SKELETON
       .pose
 
   .section.pose-4
     .bg(data-stellar-background-ratio="0.5")
     .section-container
-      .title(data-stellar-ratio="0.5")
+      .title
         | I AM A TRANSFORMER
       .pose
 

@@ -15,34 +15,8 @@ head
 
   script.
     require('scripts/initialize');
-    var startedValue;
-    (function progressBar() {
-      startedValue = 0;
-      var randomNumber;
-      setInterval(function() {
-        if (startedValue < 90) {
-          randomNumber = ~~(Math.random()*10+5);
-          startedValue += randomNumber;
-          $('.percents').empty().append(startedValue);
-          $('.percents').css('transform', 'translateX(' + startedValue + '%)')
-          $('.progress-line').css('transform', 'translateX(' + (-100 + startedValue) + '%)')
-        }
-      }, 300)
-    })()
-
-    $(window).load(function() {
-      startedValue = 100;
-      $('.percents').css('transform', 'translateX(' + startedValue+ '%)')
-      $('.percents').empty().append(startedValue);
-      $('.progress-line')
-        .css('transform', 'translateX(' + (-100 + startedValue) + '%)')
-        .queue(function() {
-          $('.preloader').delay(300).fadeOut(400);
-        });
-    });
 
 body.about-wrapper
-  include components/preloader
   .head
     .container
       include components/header

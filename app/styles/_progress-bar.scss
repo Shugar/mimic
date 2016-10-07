@@ -1,0 +1,33 @@
+.dots {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+
+  &-item {
+    margin-top: 10px;
+    height: 15px;
+    width: 15px;
+    border-radius: 100px;
+    background: #fff;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    will-change: opacity;
+
+    &.dots-active {
+      opacity: 1;
+    }
+  }
+
+  &.dots-hidden {
+    opacity: 0;
+  }
+}
