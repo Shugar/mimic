@@ -14,6 +14,7 @@ head
   script.
     require('scripts/waypoints');
     require('scripts/initialize');
+    require('scripts/main-page');
 
 
     var startedValue;
@@ -39,10 +40,11 @@ head
         .css('transform', 'translateX(' + (-100 + startedValue) + '%)')
         .queue(function() {
           $('.preloader').delay(300).fadeOut(400);
+          $('body').removeClass('body-fixed')
         });
     });
 
-body.main-page
+body.main-page.body-fixed
   include components/preloader
 
   .dots

@@ -11,6 +11,7 @@
   <script>
     require('scripts/waypoints');
     require('scripts/initialize');
+    require('scripts/main-page');
     
     
     var startedValue;
@@ -36,12 +37,13 @@
         .css('transform', 'translateX(' + (-100 + startedValue) + '%)')
         .queue(function() {
           $('.preloader').delay(300).fadeOut(400);
+          $('body').removeClass('body-fixed')
         });
     });
     
   </script>
 </head>
-<body class="main-page">
+<body class="main-page body-fixed">
   <div class="preloader">
     <div class="skeleton"></div>
     <div class="progress-bar">

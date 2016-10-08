@@ -1,11 +1,10 @@
 ﻿<?php
 
-$to = "boris@adimov.ru";
-	//Указываете свой e-mail адрес
+$to = "shugar348@gmail.com";
 
-if (isset($_POST['tel'])) {
+if ((isset($_POST['email'])&&$_POST['email']!="")&&(isset($_POST['message'])&&$_POST['message']!="")) {
 	$email = htmlspecialchars($_POST['email']);
-	$text = htmlspecialchars($_POST['text']);
+	$text = htmlspecialchars($_POST['message']);
 	$subject = htmlspecialchars($_POST['subject']);
 	$error = '';
 	if(!$email or !$subject){$error .= "Please fill all fields";}

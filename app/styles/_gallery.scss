@@ -23,6 +23,27 @@
     background-position: -64px 0;
   }
 
+  .fotorama__arr--prev {
+    background: url('../images/prev.png') no-repeat center center / contain;
+    left: 15px;
+  }
+
+  .fotorama__arr--next {
+    background: url('../images/next.png') no-repeat center center / contain;
+    right: 15px;
+  }
+
+  .fotorama__fullscreen-icon {
+    background: url('../images/close.png') no-repeat center center / contain !important;
+    top: 15px;
+    right: 18px !important;
+    cursor: pointer;
+    transform: translate(0,0) !important;
+    opacity: 1 !important;
+    height: 25px !important;
+    width: 25px !important;
+  }
+
   .nav-active {
     border-color: #334c5b;
   }
@@ -65,8 +86,6 @@
     &-item {
       margin-top: 2vw;
       margin-right: 1%;
-      background-color: #328676;
-      background-image: url('../images/gallery-icon.png');
       background-repeat: no-repeat;
       background-position: center center;
       height: 250px;
@@ -81,6 +100,11 @@
       position: absolute;
       height: 100%;
       min-width: 100%;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 

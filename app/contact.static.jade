@@ -15,6 +15,7 @@ head
 
   script.
     require('scripts/initialize');
+    require('scripts/contact');
 
 body.contact-wrapper
   .head
@@ -46,9 +47,9 @@ body.contact-wrapper
 
       .contact-item
         form.form
-          input.input(type="text" placeholder="Subject (Optional but helpful)")
-          input.input(type="text" placeholder="Email address")
-          textarea.textarea(placeholder="Message")
+          input.input(type="text" name="subject" placeholder="Subject (Optional but helpful)")
+          input.input(type="text" name="email"  placeholder="Email address")
+          textarea.textarea(placeholder="Message" name="message")
           button.submit(type="submit")
             | Send
 
