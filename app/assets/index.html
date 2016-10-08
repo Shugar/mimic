@@ -16,6 +16,7 @@
     
     var startedValue;
     (function progressBar() {
+      $(window).scrollTop();
       startedValue = 0;
       var randomNumber;
       setInterval(function() {
@@ -29,6 +30,8 @@
       }, 300)
     })()
     
+    $(document).ready(() => { $(window).scrollTop(0); })
+    
     $(window).load(function() {
       startedValue = 100;
       $('.percents').css('transform', 'translateX(' + startedValue+ '%)')
@@ -36,8 +39,9 @@
       $('.progress-line')
         .css('transform', 'translateX(' + (-100 + startedValue) + '%)')
         .queue(function() {
-          $('.preloader').delay(300).fadeOut(400);
-          $('body').removeClass('body-fixed')
+          $('.preloader').delay(300).fadeOut(400).queue(() => {
+            $('body').removeClass('body-fixed');
+          });
         });
     });
     

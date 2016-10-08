@@ -1,6 +1,6 @@
 <?
 if((isset($_POST['email'])&&$_POST['email']!="")&&(isset($_POST['message'])&&$_POST['message']!="")){
-  $to = 'shugar348@gmail.com';
+  $to = 'alrawassamer@gmail.com';
   $subject = htmlspecialchars($_POST['subject']);
   $message = '
           <html>

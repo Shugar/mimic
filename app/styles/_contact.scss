@@ -71,6 +71,10 @@
         -webkit-appearance: none;
       }
 
+      .input-empty {
+        border: 1px red solid;
+      }
+
       .textarea {
         height: 170px;
         line-height: 22px;

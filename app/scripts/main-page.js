@@ -26,10 +26,13 @@ function dots() {
       handler: (direction) => {
         if (direction == 'down') {
           changeDot(i)
+          $(item).find('.title').addClass('title-fade');
         } else {
           changeDot(i-1)
+          $(item).find('.title').removeClass('title-fade');
         }
-      }
+      },
+      offset: '10%'
     });
   });
 
@@ -47,15 +50,12 @@ function changeDot(i) {
 }
 
 function launchStellar() {
-  var offset = $(window).height()/4
+  var offset = $(window).height()/4;
 
   $('.section').each((i,e) => {
     $(e).find('.bg').attr('data-stellar-vertical-offset', offset*(i+1));
   })
 
-  $('.section').each((i,e) => {
-    $(e).find('.title').attr('data-stellar-vertical-offset', offset*(i+1));
-  })
 
   $.stellar({
     horizontalScrolling: false
