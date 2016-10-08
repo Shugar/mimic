@@ -1,25 +1,19 @@
-﻿<?php
-
-$to = "shugar348@gmail.com";
-
-if ((isset($_POST['email'])&&$_POST['email']!="")&&(isset($_POST['message'])&&$_POST['message']!="")) {
-	$email = htmlspecialchars($_POST['email']);
-	$text = htmlspecialchars($_POST['message']);
-	$subject = htmlspecialchars($_POST['subject']);
-	$error = '';
-	if(!$email or !$subject){$error .= "Please fill all fields";}
-	if(!$error){
-		$header="Content-type:text/plain;charset=utf-8\r\n";
-		$header.="From: Mimic website <robot@mimicfun.com>\r\n";
-		$body = "Email: ".$email."\r\nText: ".$text;
-		$mail = mail($to, $subject, $body, $header);
-		if($mail){
-			echo 'OK';
-		}
-	}
-	else{
-		echo $error;
-	}
+<?
+if((isset($_POST['email'])&&$_POST['email']!="")&&(isset($_POST['message'])&&$_POST['message']!="")){
+  $to = 'shugar348@gmail.com';
+  $subject = htmlspecialchars($_POST['subject']);
+  $message = '
+          <html>
+              <head>
+                  <title>'.$subject.'</title>
+              </head>
+              <body>
+                  <p>Email: '.$_POST['email'].'</p>
+                  <p>Message: '.$_POST['message'].'</p>
+              </body>
+          </html>';
+  $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+  $headers .= "From: Mimic website <robot@mimicfun.com>\r\n";
+  mail($to, $subject, $message, $headers);
 }
-
 ?>

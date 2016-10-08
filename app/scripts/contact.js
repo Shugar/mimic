@@ -3,10 +3,10 @@ function sendMail() {
     var form_data = $(this).serialize();
     $.ajax({
       type: "POST",
-      url: "../sendmail.php",
+      url: "sendmail.php",
       data: form_data,
       success: function() {
-        alert("Ваше сообщение отпрвлено!");
+        console.log('ZAEBIST!')
       }
     });
   });

@@ -42,6 +42,10 @@ function galleryInit() {
 
 const onReady = () => {
   galleryInit();
+
+  if (document.location.hash) {
+    $("a[href*='" + document.location.hash.replace('#', '') + "']").trigger('click');
+  }
 }
 
 $(document).ready(onReady);

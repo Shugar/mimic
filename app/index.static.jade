@@ -22,7 +22,7 @@ head
       startedValue = 0;
       var randomNumber;
       setInterval(function() {
-        if (startedValue < 90) {
+        if (startedValue < 80) {
           randomNumber = ~~(Math.random()*10+5);
           startedValue += randomNumber;
           $('.percents').empty().append(startedValue);
