@@ -21,6 +21,7 @@
     opacity: 0.5;
     transition: opacity 0.3s ease;
     will-change: opacity;
+    cursor: pointer;
 
     &.dots-active {
       opacity: 1;
@@ -29,5 +30,16 @@
 
   &.dots-hidden {
     opacity: 0;
+  }
+}
+
+@media (max-width: 670px){
+  .dots {
+    right: 15px;
+
+    &-item {
+      width: 10px;
+      height: 10px;
+    }
   }
 }

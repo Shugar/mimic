@@ -336,10 +336,24 @@
 @media (max-width: 445px) {
   .about-wrapper {
 
-    .plus-1,
-    .plus-2,
+    .plus-1 {
+      left: 50%;
+
+      .plus-content {
+        left: -134px
+      }
+    }
+
+    .plus.plus-2 .plus-content {
+      left: -78px;
+    }
+
     .plus-3 {
-      display: none;
+      left: 40.5%;
+
+      .plus-content {
+        left: -22px;
+      }
     }
 
     .howitworks {

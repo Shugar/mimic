@@ -44,9 +44,22 @@ function dots() {
 }
 
 function changeDot(i) {
-  var dot = $('.dots-item');
+  let dot = $('.dots-item');
   $(dot).removeClass('dots-active');
-  var dotActive = $(dot[i]).addClass('dots-active');
+  let dotActive = $(dot[i]).addClass('dots-active');
+}
+
+function onDotClick() {
+
+  Object.keys(sectionNames).map((i) => {
+    let item = sectionNames[i]
+    let dot = $('.dots-item');
+
+    $(dot[i]).click(() => {
+      console.log('Item is:', item);
+      $('html, body').animate({scrollTop:$('' + item).position().top}, 500);
+    });
+  });
 }
 
 function launchStellar() {
@@ -98,6 +111,7 @@ function videoBackground() {
 const onReady = () => {
   videoBackground();
   dots();
+  onDotClick();
 
   if ($(window).width() > 768)
     launchStellar();
