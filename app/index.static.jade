@@ -33,7 +33,7 @@ head
       }, 300)
     })()
 
-    $(document).ready(() => { $(window).scrollTop(0); })
+    $(document).ready(function(){ $(window).scrollTop(0); })
 
     $(window).load(function() {
       startedValue = 100;
@@ -42,7 +42,7 @@ head
       $('.progress-line')
         .css('transform', 'translateX(' + (-100 + startedValue) + '%)')
         .queue(function() {
-          $('.preloader').delay(300).fadeOut(400).queue(() => {
+          $('.preloader').delay(300).fadeOut(400).queue(function(){
             $('body').removeClass('body-fixed');
           });
         });
